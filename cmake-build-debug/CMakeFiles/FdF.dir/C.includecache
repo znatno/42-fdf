@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../minilibx_macos/mlx.h
+
+/Users/ibohun/CLionProjects/FdF/fdf.h
+libft/libft.h
+/Users/ibohun/CLionProjects/FdF/libft/libft.h
+mlx.h
+/Users/ibohun/CLionProjects/FdF/mlx.h
+
+/Users/ibohun/CLionProjects/FdF/libft/libft.h
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+
+/Users/ibohun/CLionProjects/FdF/main.c
+stdio.h
+-
+fdf.h
+/Users/ibohun/CLionProjects/FdF/fdf.h
+math.h
+-
+
