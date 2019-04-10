@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdio.h> // to delete
 #include "fdf.h"
-#include <math.h>
 
 /*
 ** 1. Read
@@ -54,21 +53,21 @@ static void iso(int *x, int *y, int z)
 void	ft_fill(t_mlx *mlx)
 {
 	int i;
-	int j;
+	int k;
 	int x, y;
 
 	i = 0;
-	j = 0;
+	k = 0;
 	while (i <= 500)
 	{
-		j = 0;
-		while (j <= 500)
+		k = 0;
+		while (k <= 500)
 		{
-			x = j;
+			x = k;
 			y = i;
 			iso(&x, &y, 2);
 			mlx_pixel_put(mlx->mlx, mlx->win, y, x, 0xff);
-			j++;
+			k++;
 		}
 		i++;
 	}
@@ -76,12 +75,40 @@ void	ft_fill(t_mlx *mlx)
 
 int main(int ac, char **av)
 {
-	char *map;
+//    int		fd;
+//    char	*line;
+//
+//    if (ac == 1)
+//        fd = 0;
+//    else if (ac == 2)
+//        fd = open(av[1], O_RDONLY);
+//    else
+//        return (2);
+//    if (get_next_line(fd, &line) == 1)
+//    {
+//
+//    }
+//    if (ac == 2)
+//        close(fd);
 
-	map = ft_rd(av[1]);
+
+	char *line;
+	char **map;
+
+	line = file_to_line(av[1]);
+	//map = fill_map(line);
+    printf("%s\n", line);
+//    map = ft_strsplit(line, '\n');
+    map = split_nbrs(line);
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%s\n", map[i]);
+	}
+
 	/*t_mlx	mlx;
 
-	mlx.mlx = mlx_init();
+	mlx.mx = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx, WIDTH, HEIGHT, "FdF");
 	ft_fill(&mlx);
 	mlx_hook(mlx.win, 2, 0, closee, NULL);

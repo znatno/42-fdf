@@ -4,10 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/ibohun/CLionProjects/FdF/ligni.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/ligni.c.o"
   "/Users/ibohun/CLionProjects/FdF/main.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/main.c.o"
   "/Users/ibohun/CLionProjects/FdF/read.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/read.c.o"
-  "/Users/ibohun/CLionProjects/FdF/valid.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/valid.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

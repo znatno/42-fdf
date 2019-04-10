@@ -6,3 +6,8 @@ CMakeFiles/FdF.dir/main.c.o
  /Users/ibohun/CLionProjects/FdF/fdf.h
  /Users/ibohun/CLionProjects/FdF/libft/libft.h
  /Users/ibohun/CLionProjects/FdF/main.c
+CMakeFiles/FdF.dir/read.c.o
+ ../minilibx_macos/mlx.h
+ /Users/ibohun/CLionProjects/FdF/fdf.h
+ /Users/ibohun/CLionProjects/FdF/libft/libft.h
+ /Users/ibohun/CLionProjects/FdF/read.c

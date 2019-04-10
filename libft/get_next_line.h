@@ -17,7 +17,7 @@
 # define END_OF_INPUT 0
 # define ERROR -1
 # include <fcntl.h>
-# include "libft/libft.h"
+# include "libft.h"
 
 int				get_next_line(const int fd, char **line);
 

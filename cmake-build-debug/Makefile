@@ -123,33 +123,6 @@ FdF/fast:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/build
 .PHONY : FdF/fast
 
-ligni.o: ligni.c.o
-
-.PHONY : ligni.o
-
-# target to build an object file
-ligni.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/ligni.c.o
-.PHONY : ligni.c.o
-
-ligni.i: ligni.c.i
-
-.PHONY : ligni.i
-
-# target to preprocess a source file
-ligni.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/ligni.c.i
-.PHONY : ligni.c.i
-
-ligni.s: ligni.c.s
-
-.PHONY : ligni.s
-
-# target to generate assembly for a file
-ligni.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/ligni.c.s
-.PHONY : ligni.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -204,33 +177,6 @@ read.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/read.c.s
 .PHONY : read.c.s
 
-valid.o: valid.c.o
-
-.PHONY : valid.o
-
-# target to build an object file
-valid.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/valid.c.o
-.PHONY : valid.c.o
-
-valid.i: valid.c.i
-
-.PHONY : valid.i
-
-# target to preprocess a source file
-valid.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/valid.c.i
-.PHONY : valid.c.i
-
-valid.s: valid.c.s
-
-.PHONY : valid.s
-
-# target to generate assembly for a file
-valid.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/valid.c.s
-.PHONY : valid.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,18 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... FdF"
-	@echo "... ligni.o"
-	@echo "... ligni.i"
-	@echo "... ligni.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... read.o"
 	@echo "... read.i"
 	@echo "... read.s"
-	@echo "... valid.o"
-	@echo "... valid.i"
-	@echo "... valid.s"
 .PHONY : help
 
 

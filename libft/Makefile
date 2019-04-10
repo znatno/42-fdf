@@ -29,6 +29,7 @@ SRC = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	ft_lstmap.c \
 	ft_pow.c ft_sqrt.c ft_isupper.c ft_islower.c ft_iswhite.c \
+	get_next_line.c
 
 OBJ = $(SRC:%.c=%.o)
 

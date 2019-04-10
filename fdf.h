@@ -3,9 +3,10 @@
 # include "libft/libft.h"
 # include "mlx.h"
 # include <fcntl.h>
+# include <math.h>
 # define WIDTH 1440
 # define HEIGHT 1024
-# define BUFF_SIZE 100
+# define BUFF_SIZE 32
 
 typedef struct	s_mlx
 {
@@ -13,5 +14,14 @@ typedef struct	s_mlx
 	void		*win;
 }				t_mlx;
 
-char	*ft_rd(char *name);
+typedef struct  s_pt
+{
+    int         x;
+    int         y;
+    int         z;
+}               t_pt;
+
+char	*file_to_line(char *name);
+int		**split_nbrs(char const *s);
+//int 	valid(char **map);
 #endif

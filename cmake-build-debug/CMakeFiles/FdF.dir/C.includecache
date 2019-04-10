@@ -13,6 +13,10 @@ libft/libft.h
 /Users/ibohun/CLionProjects/FdF/libft/libft.h
 mlx.h
 /Users/ibohun/CLionProjects/FdF/mlx.h
+fcntl.h
+-
+math.h
+-
 
 /Users/ibohun/CLionProjects/FdF/libft/libft.h
 unistd.h
@@ -21,12 +25,10 @@ stdlib.h
 -
 string.h
 -
-
-/Users/ibohun/CLionProjects/FdF/main.c
-stdio.h
+fcntl.h
 -
+
+/Users/ibohun/CLionProjects/FdF/read.c
 fdf.h
 /Users/ibohun/CLionProjects/FdF/fdf.h
-math.h
--
 
