@@ -20,7 +20,8 @@ char	*file_to_line(char *name)
 
 	if ((fd = open(name, O_RDONLY)) == -1)
 		return (NULL);
-    ft_bzero(res, ft_strlen(res));
+	else
+		res = ft_strnew(1);
 	while (read(fd, buf, BUFF_SIZE) > 0)
 	{
 		res = ft_strjoin(res, buf);
@@ -72,7 +73,7 @@ static int	count_lns(char const *s)
 
 int			**split_nbrs(char const *s)
 {
-	char	**arr;
+	int		**arr;
 	size_t	i;
 	size_t	j;
 	size_t	size_w;
@@ -94,10 +95,11 @@ int			**split_nbrs(char const *s)
 			j++;
 			i = 0;
 			if (count_nbrs(s) != size_w)
-				return (-1);
+				return (NULL);
 		}
 		while (!ft_isdigit(*s))
 			s++;
+		printf("int: %d ", ft_atoi(s));
 		arr[i][j] = ft_atoi(s);
 		while (ft_isdigit(*s))
 			s++;

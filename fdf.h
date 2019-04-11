@@ -4,9 +4,9 @@
 # include "mlx.h"
 # include <fcntl.h>
 # include <math.h>
+# include <stdio.h> // to delete
 # define WIDTH 1440
 # define HEIGHT 1024
-# define BUFF_SIZE 32
 
 typedef struct	s_mlx
 {

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> // to delete
 #include "fdf.h"
 
 /*
@@ -93,7 +92,7 @@ int main(int ac, char **av)
 
 
 	char *line;
-	char **map;
+	int **map;
 
 	line = file_to_line(av[1]);
 	//map = fill_map(line);
@@ -103,7 +102,8 @@ int main(int ac, char **av)
 
 	for (int i = 0; i < 10; i++)
 	{
-		printf("%s\n", map[i]);
+		for (int j = 0; j < 19; j++)
+			write(1, map[i][j] + 48, 1);
 	}
 
 	/*t_mlx	mlx;
