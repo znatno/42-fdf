@@ -73,37 +73,44 @@ static int	count_lns(char const *s)
 
 int			**split_nbrs(char const *s)
 {
-	int		**arr;
-	size_t	i;
-	size_t	j;
-	size_t	size_w;
-	size_t	size_h;
+	int	**arr;
+	int	i;
+	int	j;
+	int	size_w;
+	int size_h;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	if (!s)
 		return (NULL);
 	size_w = count_nbrs(s);
 	size_h = count_lns(s);
-	arr = (int**)malloc(size_w * size_h * sizeof(int*));
+	arr = ft_memalloc(size_h);
+	while (i < size_h)
+	{
+		arr[i] = ft_memalloc(size_w);
+		i++;
+	}
 	if (!arr)
 		return (NULL);
-	while (i < size_w)
+	i = 0;
+	while (j < size_w)
 	{
 		if (*s == '\n')
 		{
-			j++;
-			i = 0;
-			if (count_nbrs(s) != size_w)
+			i++;
+			j = 0;
+			printf("\n");
+			if (count_nbrs(++s) != size_w)
 				return (NULL);
 		}
 		while (!ft_isdigit(*s))
 			s++;
-		printf("int: %d ", ft_atoi(s));
+		printf("%d ", ft_atoi(s));
 		arr[i][j] = ft_atoi(s);
 		while (ft_isdigit(*s))
 			s++;
-		i++;
+		j++;
 	}
 	arr[i] = 0;
 	return (arr);
