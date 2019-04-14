@@ -71,29 +71,13 @@ static int	count_lns(char const *s)
 	return (nb);
 }
 
-int			**split_nbrs(char const *s)
+static int	**fill_arr(char const *s, int **arr, int size_w, int size_h)
 {
-	int	**arr;
 	int	i;
 	int	j;
-	int	size_w;
-	int size_h;
 
 	i = 0;
 	j = 0;
-	if (!s)
-		return (NULL);
-	size_w = count_nbrs(s);
-	size_h = count_lns(s);
-	arr = (int**)malloc(sizeof(int*) * size_h);
-	while (i < size_h)
-	{
-		arr[i] = (int*)malloc(sizeof(int) * size_w);
-		i++;
-	}
-	if (!arr)
-		return (NULL);
-	i = 0;
 	while (j < size_w && *s != '\0')
 	{
 		if (*s == '\n' && *(s + 1) == '\0')
@@ -113,4 +97,27 @@ int			**split_nbrs(char const *s)
 		j++;
 	}
 	return (arr);
+}
+
+int			**split_nbrs(char const *s)
+{
+	int	**arr;
+	int	i;
+	int	size_w;
+	int size_h;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	size_w = count_nbrs(s);
+	size_h = count_lns(s);
+	arr = (int**)malloc(sizeof(int*) * size_h);
+	while (i < size_h)
+	{
+		arr[i] = (int*)malloc(sizeof(int) * size_w);
+		i++;
+	}
+	if (!arr)
+		return (NULL);
+	return (fill_arr(s, arr, size_w, size_h));
 }
