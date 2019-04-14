@@ -84,7 +84,6 @@ int main(int ac, char **av)
     	return (-1); /* не валідна */
 
 
-
 	/*t_mlx	mlx;
 
 	mlx.mx = mlx_init();
