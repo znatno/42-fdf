@@ -71,7 +71,7 @@ static int	count_lns(char const *s)
 	return (nb);
 }
 
-static int	**fill_arr(char const *s, int **arr, int size_w, int size_h)
+static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 {
 	int	i;
 	int	j;
@@ -91,7 +91,10 @@ static int	**fill_arr(char const *s, int **arr, int size_w, int size_h)
 		}
 		while (!ft_isdigit(*s))
 			s++;
-		arr[i][j] = ft_atoi(s);
+		arr[i][j].z = ft_atoi(s);
+		arr[i][j].color = 0xFFFFFF;
+		arr[i][j].x = i;
+		arr[i][j].y = j;
 		while (ft_isdigit(*s))
 			s++;
 		j++;
@@ -99,25 +102,23 @@ static int	**fill_arr(char const *s, int **arr, int size_w, int size_h)
 	return (arr);
 }
 
-int			**split_nbrs(char const *s)
+t_pt		**split_nbrs(char const *s, t_mlx *mlx)
 {
-	int	**arr;
+	t_pt	**arr;
 	int	i;
-	int	size_w;
-	int size_h;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	size_w = count_nbrs(s);
-	size_h = count_lns(s);
-	arr = (int**)malloc(sizeof(int*) * size_h);
-	while (i < size_h)
+	mlx->size_w = count_nbrs(s);
+	mlx->size_h = count_lns(s);
+	arr = (t_pt**)malloc(sizeof(t_pt*) * mlx->size_h);
+	while (i < mlx->size_h)
 	{
-		arr[i] = (int*)malloc(sizeof(int) * size_w);
+		arr[i] = (t_pt*)malloc(sizeof(t_pt) * mlx->size_w);
 		i++;
 	}
 	if (!arr)
 		return (NULL);
-	return (fill_arr(s, arr, size_w, size_h));
+	return (fill_arr(s, arr, mlx->size_w, mlx->size_h));
 }

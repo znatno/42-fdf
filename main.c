@@ -13,9 +13,9 @@
 #include "fdf.h"
 
 /*
-** 1. Read
+** 1. Read +
 ** -
-** 2. Valid
+** 2. Valid +
 ** -
 ** 3. Align by figure center
 ** 4. Align by screen center
@@ -26,11 +26,24 @@
 ** 8. Scaling
 ** 9. Moving
 ** 10. Rotating
+** 11. Multimaps
+ *
+ *
+ * НОВІ КРОКИ
+ * 1. ф-ція для малювання лінії між 2 точками
+ * 2. ф-ція для розміщення першої точки і всіх наступни так
+ * 		щоб фігура була по центру
+ * 3. ф-ція для перетворення координат кожної точки відносно її вистоти
+ * 		щоб утворилось ізометричний вигляд фігури
+ * 4. відмалювати лінії між точками в буфер
+ * 5. вивести буфер
+ *
 */
 
-/*int closee(void *param, int key)
+int close_mlx(int key, void *param)
 {
 	(void)param;
+	printf("KEY = %d\n", key);
 	if (key == 53)
 		exit(0);
 	else
@@ -49,47 +62,68 @@ static void iso(int *x, int *y, int z)
 	*y = -z + (previous_x + previous_y) * sin(0.523599);
 }
 
-void	ft_fill(t_mlx *mlx)
+void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
+{
+	int dx = x1 - x0;
+	int dy = y1 - y0;
+	int d = (dy << 1) - dx;
+	int d1 = dy << 1;
+	int d2 = (dy - dx) << 1;
+	int color = 0xFFFFFF;
+
+	mlx_pixel_put(mlx->mlx, mlx->win,x0, y0, color);
+	for(int x = x0 + 1, y = y0; x <= x1; x++)
+	{
+		if ( d >0)
+		{
+			d += d2;
+			y += 1;
+		}
+		else
+			d += d1;
+		mlx_pixel_put(mlx->mlx, mlx->win, x, y, color);
+	}
+}
+
+void	ft_fill(t_mlx *mlx, t_pt *arr)
 {
 	int i;
 	int k;
-	int x, y;
+	int x, y = 0;
 
 	i = 0;
-	k = 0;
-	while (i <= 500)
+	while (i < 1024)
 	{
-		k = 0;
-		while (k <= 500)
-		{
-			x = k;
-			y = i;
-			iso(&x, &y, 2);
-			mlx_pixel_put(mlx->mlx, mlx->win, y, x, 0xff);
-			k++;
-		}
+		mlx_pixel_put(mlx->mlx, mlx->win, y, x, 0xff);
+		x++;
 		i++;
+		y++;
 	}
-}*/
+	y = 0;
+	while (i > 0)
+	{
+		mlx_pixel_put(mlx->mlx, mlx->win, y, x, 0xff);
+		x--;
+		i--;
+		y++;
+	}
+}
 
 int main(int ac, char **av)
 {
 	char	*line;
-	int		**map;
+	t_pt	**map;
 	char 	*c_nb;
-	t_pt	**hui;
+	t_pt	**arr;
+	t_mlx	mlx;
 
 	line = file_to_line(av[1]);
-    if (!(map = split_nbrs(line)))
+    if (!(map = split_nbrs(line, &mlx)))
     	return (-1); /* не валідна */
-
-
-	/*t_mlx	mlx;
-
-	mlx.mx = mlx_init();
+	mlx.mlx = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx, WIDTH, HEIGHT, "FdF");
-	ft_fill(&mlx);
-	mlx_hook(mlx.win, 2, 0, closee, NULL);
-	mlx_loop(mlx.mlx);*/
+
+	mlx_hook(mlx.win, 2, 0, close_mlx, NULL);
+	mlx_loop(mlx.mlx);
 	return (0);
 }

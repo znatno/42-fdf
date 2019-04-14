@@ -12,16 +12,21 @@ typedef struct	s_mlx
 {
 	void		*mlx;
 	void		*win;
+	int			size_w;
+	int 		size_h;
+
 }				t_mlx;
 
 typedef struct  s_pt
 {
-    int         x;
-    int         y;
+	int 		x;
+	int 		y;
     int         z;
+    int 		color;
 }               t_pt;
 
 char	*file_to_line(char *name);
-int		**split_nbrs(char const *s);
+t_pt	**split_nbrs(char const *s, t_mlx *mlx);
+//t_pt	**to_structs(int **map);
 //int 	valid(char **map);
-#endif
+#endifm
