@@ -79,39 +79,38 @@ int			**split_nbrs(char const *s)
 	int	size_w;
 	int size_h;
 
-	i = -1;
+	i = 0;
 	j = 0;
 	if (!s)
 		return (NULL);
 	size_w = count_nbrs(s);
 	size_h = count_lns(s);
-	arr = ft_memalloc(size_h);
+	arr = (int**)malloc(sizeof(int*) * size_h);
 	while (i < size_h)
 	{
-		arr[i] = ft_memalloc(size_w);
+		arr[i] = (int*)malloc(sizeof(int) * size_w);
 		i++;
 	}
 	if (!arr)
 		return (NULL);
 	i = 0;
-	while (j < size_w)
+	while (j < size_w && *s != '\0')
 	{
+		if (*s == '\n' && *(s + 1) == '\0')
+			break ;
 		if (*s == '\n')
 		{
 			i++;
 			j = 0;
-			printf("\n");
 			if (count_nbrs(++s) != size_w)
 				return (NULL);
 		}
 		while (!ft_isdigit(*s))
 			s++;
-		printf("%d ", ft_atoi(s));
 		arr[i][j] = ft_atoi(s);
 		while (ft_isdigit(*s))
 			s++;
 		j++;
 	}
-	arr[i] = 0;
 	return (arr);
 }

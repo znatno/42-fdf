@@ -74,37 +74,16 @@ void	ft_fill(t_mlx *mlx)
 
 int main(int ac, char **av)
 {
-//    int		fd;
-//    char	*line;
-//
-//    if (ac == 1)
-//        fd = 0;
-//    else if (ac == 2)
-//        fd = open(av[1], O_RDONLY);
-//    else
-//        return (2);
-//    if (get_next_line(fd, &line) == 1)
-//    {
-//
-//    }
-//    if (ac == 2)
-//        close(fd);
-
-
-	char *line;
-	int **map;
+	char	*line;
+	int		**map;
+	char 	*c_nb;
+	t_pt	**hui;
 
 	line = file_to_line(av[1]);
-	//map = fill_map(line);
-    printf("%s\n", line);
-//    map = ft_strsplit(line, '\n');
-    map = split_nbrs(line);
+    if (!(map = split_nbrs(line)))
+    	return (-1); /* не валідна */
 
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 19; j++)
-			write(1, map[i][j] + 48, 1);
-	}
+
 
 	/*t_mlx	mlx;
 
