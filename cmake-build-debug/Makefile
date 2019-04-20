@@ -177,6 +177,33 @@ read.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/read.c.s
 .PHONY : read.c.s
 
+struct.o: struct.c.o
+
+.PHONY : struct.o
+
+# target to build an object file
+struct.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/struct.c.o
+.PHONY : struct.c.o
+
+struct.i: struct.c.i
+
+.PHONY : struct.i
+
+# target to preprocess a source file
+struct.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/struct.c.i
+.PHONY : struct.c.i
+
+struct.s: struct.c.s
+
+.PHONY : struct.s
+
+# target to generate assembly for a file
+struct.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/struct.c.s
+.PHONY : struct.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... read.o"
 	@echo "... read.i"
 	@echo "... read.s"
+	@echo "... struct.o"
+	@echo "... struct.i"
+	@echo "... struct.s"
 .PHONY : help
 
 

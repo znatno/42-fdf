@@ -17,6 +17,8 @@ fcntl.h
 -
 math.h
 -
+stdio.h
+-
 
 /Users/ibohun/CLionProjects/FdF/libft/libft.h
 unistd.h
@@ -28,7 +30,7 @@ string.h
 fcntl.h
 -
 
-/Users/ibohun/CLionProjects/FdF/read.c
+/Users/ibohun/CLionProjects/FdF/main.c
 fdf.h
 /Users/ibohun/CLionProjects/FdF/fdf.h
 

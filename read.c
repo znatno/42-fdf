@@ -102,7 +102,7 @@ static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 	return (arr);
 }
 
-t_pt		**split_nbrs(char const *s, t_mlx *mlx)
+t_pt		**split_nbrs(char const *s, t_mlx *fdf)
 {
 	t_pt	**arr;
 	int	i;
@@ -110,15 +110,15 @@ t_pt		**split_nbrs(char const *s, t_mlx *mlx)
 	i = 0;
 	if (!s)
 		return (NULL);
-	mlx->size_w = count_nbrs(s);
-	mlx->size_h = count_lns(s);
-	arr = (t_pt**)malloc(sizeof(t_pt*) * mlx->size_h);
-	while (i < mlx->size_h)
+	fdf->size_w = count_nbrs(s);
+	fdf->size_h = count_lns(s);
+	arr = (t_pt**)malloc(sizeof(t_pt*) * fdf->size_h);
+	while (i < fdf->size_h)
 	{
-		arr[i] = (t_pt*)malloc(sizeof(t_pt) * mlx->size_w);
+		arr[i] = (t_pt*)malloc(sizeof(t_pt) * fdf->size_w);
 		i++;
 	}
 	if (!arr)
 		return (NULL);
-	return (fill_arr(s, arr, mlx->size_w, mlx->size_h));
+	return (fill_arr(s, arr, fdf->size_w, fdf->size_h));
 }

@@ -31,7 +31,7 @@
  *
  * НОВІ КРОКИ
  * 1. ф-ція для малювання лінії між 2 точками
- * 2. ф-ція для розміщення першої точки і всіх наступни так
+ * 2. ф-ція для розміщення першої точки і всіх наступних так
  * 		щоб фігура була по центру
  * 3. ф-ція для перетворення координат кожної точки відносно її вистоти
  * 		щоб утворилось ізометричний вигляд фігури
@@ -72,7 +72,7 @@ void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
 	int color = 0xFFFFFF;
 
 	mlx_pixel_put(mlx->mlx, mlx->win,x0, y0, color);
-	for(int x = x0 + 1, y = y0; x <= x1; x++)
+	for (int x = x0 + 1, y = y0; x <= x1; x++)
 	{
 		if ( d >0)
 		{
@@ -85,16 +85,16 @@ void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
 	}
 }
 
-void	ft_fill(t_mlx *mlx, t_pt *arr)
+void	ft_fill(t_mlx *fdf, t_pt ***arr)
 {
 	int i;
 	int k;
-	int x, y = 0;
+	int x = 0, y = 0;
 
 	i = 0;
 	while (i < 1024)
 	{
-		mlx_pixel_put(mlx->mlx, mlx->win, y, x, 0xff);
+		mlx_pixel_put(fdf->mlx, fdf->win, x, y, 0xff);
 		x++;
 		i++;
 		y++;
@@ -102,7 +102,7 @@ void	ft_fill(t_mlx *mlx, t_pt *arr)
 	y = 0;
 	while (i > 0)
 	{
-		mlx_pixel_put(mlx->mlx, mlx->win, y, x, 0xff);
+		mlx_pixel_put(fdf->mlx, fdf->win, x, y, 0xff);
 		x--;
 		i--;
 		y++;
@@ -111,19 +111,17 @@ void	ft_fill(t_mlx *mlx, t_pt *arr)
 
 int main(int ac, char **av)
 {
-	char	*line;
 	t_pt	**map;
 	char 	*c_nb;
 	t_pt	**arr;
-	t_mlx	mlx;
+	t_mlx	fdf;
 
-	line = file_to_line(av[1]);
-    if (!(map = split_nbrs(line, &mlx)))
+    if (!(map = split_nbrs(file_to_line(av[1]), &fdf)))
     	return (-1); /* не валідна */
-	mlx.mlx = mlx_init();
-	mlx.win = mlx_new_window(mlx.mlx, WIDTH, HEIGHT, "FdF");
-
-	mlx_hook(mlx.win, 2, 0, close_mlx, NULL);
-	mlx_loop(mlx.mlx);
+	fdf.mlx = mlx_init();
+	fdf.win = mlx_new_window(fdf.mlx, WIDTH, HEIGHT, "FdF");
+	ft_fill(&fdf, &arr);
+	mlx_hook(fdf.win, 2, 0, close_mlx, NULL);
+	mlx_loop(fdf.mlx);
 	return (0);
 }

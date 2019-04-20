@@ -29,4 +29,4 @@ char	*file_to_line(char *name);
 t_pt	**split_nbrs(char const *s, t_mlx *mlx);
 //t_pt	**to_structs(int **map);
 //int 	valid(char **map);
-#endifm
+#endif

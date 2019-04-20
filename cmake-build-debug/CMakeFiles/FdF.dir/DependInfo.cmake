@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/ibohun/CLionProjects/FdF/main.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/main.c.o"
   "/Users/ibohun/CLionProjects/FdF/read.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/read.c.o"
+  "/Users/ibohun/CLionProjects/FdF/struct.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/struct.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

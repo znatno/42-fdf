@@ -11,3 +11,5 @@ CMakeFiles/FdF.dir/read.c.o: ../fdf.h
 CMakeFiles/FdF.dir/read.c.o: ../libft/libft.h
 CMakeFiles/FdF.dir/read.c.o: ../read.c
 
+CMakeFiles/FdF.dir/struct.c.o: ../struct.c
+
