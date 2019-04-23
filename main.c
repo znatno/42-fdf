@@ -17,9 +17,10 @@
 ** -
 ** 2. Valid +
 ** -
-** 3. Align by figure center
-** 4. Align by screen center
-** 5. Isometric
+** 3. Align by figure center +
+** 4. Align by screen center +
+** 5. Isometric +
+ * 6. fix reading all maps
 ** >>> bonus <<<
 ** 6. Gradient
 ** 7. Menu
@@ -56,12 +57,14 @@ static void iso(t_pt *p)
 	int previous_x;
 	int previous_y;
 
+	//printf("#before ISO# x: %d, y: %d, z: %d\n", p->x, p->y, p->z);
 	previous_x = p->x;
 	previous_y = p->y;
 	p->x = (previous_x - previous_y) * cos(0.523599);
 	p->y = -p->z + (previous_x + previous_y) * sin(0.523599);
 	p->x += WIDTH / 2;
 	p->y += HEIGHT / 2;
+	//printf("#after ISO# x: %d, y: %d, z: %d\n\n", p->x, p->y, p->z);
 }
 
 void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
@@ -121,10 +124,10 @@ void	ft_fill(t_mlx fdf, t_pt **arr)
 		j = 0;
 		while (j < fdf.size_w)
 		{
-			if (i < fdf.size_h - 2)
+			if (i < fdf.size_h - 1)
 				line(arr[i][j].x, arr[i + 1][j].x,
 						arr[i][j].y, arr[i + 1][j].y, fdf.mlx);
-			if (j < fdf.size_w - 2)
+			if (j < fdf.size_w - 1)
 				line(arr[i][j].x, arr[i][j + 1].x,
 						arr[i][j].y, arr[i][j + 1].y, fdf.mlx);
 			j++;
@@ -167,6 +170,7 @@ int main(int ac, char **av)
 		j = 0;
 		while (j < fdf.size_w)
 		{
+			//printf("#map# i: %d, j: %d\n", i, j);
 			iso(&map[i][j]);
 			j++;
 		}

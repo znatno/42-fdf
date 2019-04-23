@@ -40,8 +40,8 @@ static int	count_nbrs(char const *s)
 	nb = 0;
 	if (!s || !*s)
 		return (0);
-	if (ft_isdigit(s[0]))
-		nb = 1;
+	/*if (ft_isdigit(s[0]))
+		nb = 1;*/
 	while (s[i] != '\0' && s[i] != '\n')
 	{
 		if (ft_isdigit(s[i]) && !ft_isdigit(s[i + 1]) && s[i + 1] != '\0')
@@ -60,11 +60,11 @@ static int	count_lns(char const *s)
 	nb = 0;
 	if (!s || !*s)
 		return (0);
-	if (ft_isdigit(s[0]))
-		nb = 1;
+	/*if (ft_isdigit(s[0]))
+		nb = 1;*/
 	while (s[i] != '\0')
 	{
-		if (s[i] == '\n')
+		if ((s[i] == '\n' && s[i + 1] != '\n'))
 			nb++;
 		i++;
 	}
@@ -78,28 +78,29 @@ static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 
 	i = 0;
 	j = 0;
-	//int k = 2;
-	while (j < size_w && *s != '\0')
+	while (j <= size_w && *s != '\0')
 	{
-		if (*s == '\n' && *(s + 1) == '\0')
+		while (*s == ' ')
+			s++;
+		if (*s == '\n' && (*(s + 1) == '\0' || *(s + 1) == '\n'))
 			break ;
 		if (*s == '\n')
 		{
 			i++;
 			j = 0;
-			if (count_nbrs(++s) != size_w)
+			if (count_nbrs(++s) != size_w || i > size_h)
 				return (NULL);
 		}
-		while (!ft_isdigit(*s))
+		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
 			s++;
-		arr[i][j].z = ft_atoi(s) * 5;
+		arr[i][j].z = ft_atoi(s) *10;//* 20;
 		arr[i][j].color = 0xFFFFFF;
-		arr[i][j].x = (j - size_w / 2) * 20;
-		arr[i][j].y = (i - size_h / 2) * 20;
-		while (ft_isdigit(*s))
+		arr[i][j].x = (j - size_w / 2) * 10;
+		arr[i][j].y = (i - size_h / 2) * 10;
+		while (ft_isdigit(*s) || *s == '-')
 			s++;
+
 		j++;
-		//k = (k + 100)/2;
 	}
 	return (arr);
 }
