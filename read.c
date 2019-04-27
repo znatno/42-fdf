@@ -87,9 +87,12 @@ static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 		if (*s == '\n')
 		{
 			i++;
+			if (i > size_h)
+				break ;
 			j = 0;
-			if (count_nbrs(++s) != size_w || i > size_h)
-				return (NULL);
+			/*if (count_nbrs(++s) != size_w || i > size_h)
+				return (NULL);*/
+			++s;
 		}
 		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
 			s++;
@@ -99,7 +102,6 @@ static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 		arr[i][j].y = (i - size_h / 2) * 10;
 		while (ft_isdigit(*s) || *s == '-')
 			s++;
-
 		j++;
 	}
 	return (arr);
