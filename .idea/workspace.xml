@@ -12,7 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a2ff49-8e2b-4c8a-be9e-0db0eb257243" name="Default Changelist" comment="upd">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +47,7 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
                   <provider selected="true" editor-type-id="text-editor">
                     <state>
@@ -49,11 +56,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.gitignore">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state>
-                      <caret column="18" selection-start-column="18" selection-end-column="18" />
+                    <state relative-caret-position="15">
+                      <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
                     </state>
                   </provider>
                 </entry>
@@ -107,8 +114,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/libft/libft.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="258">
-                  <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+                <state relative-caret-position="600">
+                  <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -160,6 +167,11 @@
             <path>
               <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
               <item name="FdF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FdF" type="462c0819:PsiDirectoryNode" />
+              <item name="minilibx_macos" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,7 +248,7 @@
       <workItem from="1556025682410" duration="73000" />
       <workItem from="1556374708622" duration="2559000" />
       <workItem from="1562057997029" duration="566000" />
-      <workItem from="1562058597657" duration="763000" />
+      <workItem from="1562058597657" duration="1147000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1554720683506</created>
@@ -333,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84266000" />
+    <option name="totallyTimeSpent" value="84650000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,20 +360,20 @@
     <frame x="0" y="23" width="2560" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48925412" visible="true" weight="0.16441621" />
-      <window_info id="Structure" order="1" sideWeight="0.5107459" side_tool="true" visible="true" weight="0.16441621" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48910674" visible="true" weight="0.16441621" />
+      <window_info id="Structure" order="1" sideWeight="0.5108932" side_tool="true" visible="true" weight="0.16441621" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4110405" weight="0.2626506" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.41064337" visible="true" weight="0.2626506" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48967436" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32931727" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.40230343" weight="0.32851407" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.47498015" visible="true" weight="0.36465862" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5250199" side_tool="true" visible="true" weight="0.36465862" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.474583" weight="0.36465862" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.58935666" side_tool="true" visible="true" weight="0.2626506" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49960285" weight="0.32931727" />
       <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -562,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/libft.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/read.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
@@ -576,17 +581,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/libft.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
