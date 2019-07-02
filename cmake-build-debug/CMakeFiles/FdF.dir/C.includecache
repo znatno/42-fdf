@@ -18,11 +18,11 @@ fcntl.h
 
 ../minilibx_macos/mlx.h
 
-/Users/ivan/CLionProjects/42-fdf/include/fdf.h
+/Users/ibohun/CLionProjects/42-fdf/include/fdf.h
 libft.h
-/Users/ivan/CLionProjects/42-fdf/include/libft.h
+/Users/ibohun/CLionProjects/42-fdf/include/libft.h
 mlx.h
-/Users/ivan/CLionProjects/42-fdf/include/mlx.h
+/Users/ibohun/CLionProjects/42-fdf/include/mlx.h
 fcntl.h
 -
 math.h
@@ -30,7 +30,7 @@ math.h
 stdio.h
 -
 
-/Users/ivan/CLionProjects/42-fdf/src/read.c
+/Users/ibohun/CLionProjects/42-fdf/src/read.c
 ../include/fdf.h
-/Users/ivan/CLionProjects/42-fdf/include/fdf.h
+/Users/ibohun/CLionProjects/42-fdf/include/fdf.h
 
