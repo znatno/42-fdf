@@ -14,30 +14,6 @@
 
 char	*file_to_line(char *name)
 {
-	int		fd;
-	char	*file;
-	char	*tmp;
-	int		i;
-	char	buf[BUFF_SIZE + 1];
-
-	i = 0;
-	if ((fd = open(name, O_RDONLY)) == -1)
-		return (NULL);
-	file = ft_strnew(1);
-	while ((i = read(fd, buf, BUFF_SIZE)))
-	{
-		if (i < 0)
-		{
-			ft_memdel((void **)&file);
-			return (NULL);
-		}
-		buf[i] = '\0';
-		tmp = ft_strjoin(file, buf);
-		ft_memdel((void **)&file);
-		file = tmp;
-	}
-	close(fd);
-	return (file);
 
 	// OLD
 	/*
@@ -124,10 +100,10 @@ static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 		}
 		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
 			s++;
-		arr[i][j].z = ft_atoi(s) * 5; // height;
+		arr[i][j].z = ft_atoi(s) * 1; // height;
 		arr[i][j].color = 0xFFFFFF;
-		arr[i][j].x = (j - size_w / 2) * 10; // x axis
-		arr[i][j].y = (i - size_h / 2) * 10; // y axis
+		arr[i][j].x = (j - size_w / 2) * 5; // x axis
+		arr[i][j].y = (i - size_h / 2) * 5; // y axis
 		while (ft_isdigit(*s) || *s == '-')
 			s++;
 		j++;

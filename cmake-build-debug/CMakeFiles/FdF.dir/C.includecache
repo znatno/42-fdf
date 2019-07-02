@@ -33,4 +33,6 @@ stdio.h
 /Users/ibohun/CLionProjects/42-fdf/src/read.c
 ../include/fdf.h
 /Users/ibohun/CLionProjects/42-fdf/include/fdf.h
+stdio.h
+-
 
