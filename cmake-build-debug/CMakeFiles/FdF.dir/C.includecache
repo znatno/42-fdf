@@ -6,21 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../minilibx_macos/mlx.h
-
-/Users/ibohun/CLionProjects/FdF/fdf.h
-libft/libft.h
-/Users/ibohun/CLionProjects/FdF/libft/libft.h
-mlx.h
-/Users/ibohun/CLionProjects/FdF/mlx.h
-fcntl.h
--
-math.h
--
-stdio.h
--
-
-/Users/ibohun/CLionProjects/FdF/libft/libft.h
+../libft/libft.h
 unistd.h
 -
 stdlib.h
@@ -30,7 +16,21 @@ string.h
 fcntl.h
 -
 
-/Users/ibohun/CLionProjects/FdF/main.c
-fdf.h
-/Users/ibohun/CLionProjects/FdF/fdf.h
+../minilibx_macos/mlx.h
+
+/Users/ivan/CLionProjects/42-fdf/include/fdf.h
+libft.h
+/Users/ivan/CLionProjects/42-fdf/include/libft.h
+mlx.h
+/Users/ivan/CLionProjects/42-fdf/include/mlx.h
+fcntl.h
+-
+math.h
+-
+stdio.h
+-
+
+/Users/ivan/CLionProjects/42-fdf/src/read.c
+../include/fdf.h
+/Users/ivan/CLionProjects/42-fdf/include/fdf.h
 

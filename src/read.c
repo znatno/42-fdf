@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../include/fdf.h"
 
 char	*file_to_line(char *name)
 {
@@ -96,7 +96,7 @@ static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 		}
 		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
 			s++;
-		arr[i][j].z = ft_atoi(s) *10;//* 20;
+		arr[i][j].z = ft_atoi(s) / 10;//* 20;
 		arr[i][j].color = 0xFFFFFF;
 		arr[i][j].x = (j - size_w / 2) * 10;
 		arr[i][j].y = (i - size_h / 2) * 10;

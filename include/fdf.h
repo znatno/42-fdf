@@ -1,12 +1,12 @@
 #ifndef FDF_H
 # define FDF_H
-# include "libft/libft.h"
+# include "libft.h"
 # include "mlx.h"
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h> // to delete
-# define WIDTH 1440
-# define HEIGHT 1024
+# define WIDTH 1280
+# define HEIGHT 800
 
 typedef struct	s_mlx
 {

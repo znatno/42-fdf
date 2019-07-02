@@ -4,9 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/ibohun/CLionProjects/FdF/main.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/main.c.o"
-  "/Users/ibohun/CLionProjects/FdF/read.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/read.c.o"
-  "/Users/ibohun/CLionProjects/FdF/struct.c" "/Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/struct.c.o"
+  "/Users/ivan/CLionProjects/42-fdf/src/main.c" "/Users/ivan/CLionProjects/42-fdf/cmake-build-debug/CMakeFiles/FdF.dir/src/main.c.o"
+  "/Users/ivan/CLionProjects/42-fdf/src/read.c" "/Users/ivan/CLionProjects/42-fdf/cmake-build-debug/CMakeFiles/FdF.dir/src/read.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
@@ -14,6 +13,8 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libft"
   "../minilibx_macos"
+  "../libft/include"
+  "../include"
   )
 
 # Targets to which this target links.

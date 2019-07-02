@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ibohun/CLionProjects/FdF
+CMAKE_SOURCE_DIR = /Users/ivan/CLionProjects/42-fdf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ibohun/CLionProjects/FdF/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/ivan/CLionProjects/42-fdf/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles /Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ivan/CLionProjects/42-fdf/cmake-build-debug/CMakeFiles /Users/ivan/CLionProjects/42-fdf/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ibohun/CLionProjects/FdF/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ivan/CLionProjects/42-fdf/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,86 +123,59 @@ FdF/fast:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/build
 .PHONY : FdF/fast
 
-main.o: main.c.o
+src/main.o: src/main.c.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/main.c.s
-.PHONY : main.c.s
-
-read.o: read.c.o
-
-.PHONY : read.o
+.PHONY : src/main.o
 
 # target to build an object file
-read.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/read.c.o
-.PHONY : read.c.o
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/main.c.o
+.PHONY : src/main.c.o
 
-read.i: read.c.i
+src/main.i: src/main.c.i
 
-.PHONY : read.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-read.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/read.c.i
-.PHONY : read.c.i
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/main.c.i
+.PHONY : src/main.c.i
 
-read.s: read.c.s
+src/main.s: src/main.c.s
 
-.PHONY : read.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-read.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/read.c.s
-.PHONY : read.c.s
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/main.c.s
+.PHONY : src/main.c.s
 
-struct.o: struct.c.o
+src/read.o: src/read.c.o
 
-.PHONY : struct.o
+.PHONY : src/read.o
 
 # target to build an object file
-struct.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/struct.c.o
-.PHONY : struct.c.o
+src/read.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/read.c.o
+.PHONY : src/read.c.o
 
-struct.i: struct.c.i
+src/read.i: src/read.c.i
 
-.PHONY : struct.i
+.PHONY : src/read.i
 
 # target to preprocess a source file
-struct.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/struct.c.i
-.PHONY : struct.c.i
+src/read.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/read.c.i
+.PHONY : src/read.c.i
 
-struct.s: struct.c.s
+src/read.s: src/read.c.s
 
-.PHONY : struct.s
+.PHONY : src/read.s
 
 # target to generate assembly for a file
-struct.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/struct.c.s
-.PHONY : struct.c.s
+src/read.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/read.c.s
+.PHONY : src/read.c.s
 
 # Help Target
 help:
@@ -213,15 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... FdF"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... read.o"
-	@echo "... read.i"
-	@echo "... read.s"
-	@echo "... struct.o"
-	@echo "... struct.i"
-	@echo "... struct.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/read.o"
+	@echo "... src/read.i"
+	@echo "... src/read.s"
 .PHONY : help
 
 

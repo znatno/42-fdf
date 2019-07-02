@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../include/fdf.h"
 
 /*
 ** 1. Read +
@@ -20,14 +20,15 @@
 ** 3. Align by figure center +
 ** 4. Align by screen center +
 ** 5. Isometric +
- * 6. fix reading all maps
+ * 6. Parallel/Conic
+ * 7. fix reading all maps
 ** >>> bonus <<<
-** 6. Gradient
-** 7. Menu
-** 8. Scaling
-** 9. Moving
-** 10. Rotating
-** 11. Multimaps
+** 8. Gradient
+** 9. Menu
+** 10. Scaling
+** 11. Moving
+** 13. Rotating
+** 14. Multimaps
  *
  *
  * НОВІ КРОКИ
