@@ -123,6 +123,33 @@ FdF/fast:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/build
 .PHONY : FdF/fast
 
+src/fill.o: src/fill.c.o
+
+.PHONY : src/fill.o
+
+# target to build an object file
+src/fill.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/fill.c.o
+.PHONY : src/fill.c.o
+
+src/fill.i: src/fill.c.i
+
+.PHONY : src/fill.i
+
+# target to preprocess a source file
+src/fill.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/fill.c.i
+.PHONY : src/fill.c.i
+
+src/fill.s: src/fill.c.s
+
+.PHONY : src/fill.s
+
+# target to generate assembly for a file
+src/fill.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/fill.c.s
+.PHONY : src/fill.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... FdF"
+	@echo "... src/fill.o"
+	@echo "... src/fill.i"
+	@echo "... src/fill.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

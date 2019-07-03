@@ -86,6 +86,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/ibohun/CLionProjects/42-fdf/src/fill.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/ibohun/CLionProjects/42-fdf/src/main.c">
 			<Option target="FdF"/>
 		</Unit>

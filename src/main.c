@@ -42,12 +42,20 @@
  *
 */
 
-int close_mlx(int key, void *param)
+int binds_mlx(int key, void *param)
 {
 	(void)param;
 	printf("KEY = %d\n", key);
 	if (key == 53)
 		exit(0);
+	else if (key == 18) // ізометрія
+	{
+		printf("обама чмо\n");
+	}
+	else if (key == 19) // вигляд згори
+	{
+		printf("обама чмо\n");
+	}
 	else
 		printf("There isn't such keybinding\n");
 	return (0);
@@ -58,14 +66,12 @@ static void iso(t_pt *p)
 	int previous_x;
 	int previous_y;
 
-	//printf("#before ISO# x: %d, y: %d, z: %d\n", p->x, p->y, p->z);
 	previous_x = p->x;
 	previous_y = p->y;
 	p->x = (previous_x - previous_y) * cos(0.523599);
 	p->y = -p->z + (previous_x + previous_y) * sin(0.523599);
 	p->x += WIDTH / 2;
 	p->y += HEIGHT / 2;
-	//printf("#after ISO# x: %d, y: %d, z: %d\n\n", p->x, p->y, p->z);
 }
 
 void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
@@ -84,7 +90,7 @@ void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
 		mlx_pixel_put(mlx->mlx, mlx->win, x0, y0, color);
 		for(int x = x0 + sx, y = y0, i = 1; i <= dx; i++, x += sx)
 		{
-			if ( d >0)
+			if (d > 0)
 			{
 				d += d2;
 				y += sy;
@@ -125,60 +131,43 @@ void	ft_fill(t_mlx fdf, t_pt **arr)
 		j = 0;
 		while (j < fdf.size_w)
 		{
-			if (i < fdf.size_h - 1)
+			if (i < fdf.size_h - 1 && ((arr[i][j].print == 1) && (arr[i + 1][j].print == 1)))
 				line(arr[i][j].x, arr[i + 1][j].x,
 						arr[i][j].y, arr[i + 1][j].y, fdf.mlx);
-			if (j < fdf.size_w - 1)
+			if (j < fdf.size_w - 1 && ((arr[i][j].print == 1) && (arr[i][j + 1].print == 1)))
 				line(arr[i][j].x, arr[i][j + 1].x,
 						arr[i][j].y, arr[i][j + 1].y, fdf.mlx);
 			j++;
 		}
 		i++;
 	}
-	//line(0, 200, 0, 200, fdf.mlx);
 }
 
 int main(int ac, char **av)
 {
 	t_pt	**map;
-	t_pt	**arr;
 	t_mlx	fdf;
-
-    if (!(map = split_nbrs(file_to_line(av[1]), &fdf)))
-    	return (-1); /* не валідна */
-	fdf.mlx = mlx_init();
-	fdf.win = mlx_new_window(fdf.mlx, WIDTH, HEIGHT, "FdF");
-
-	//ft_fill(&fdf, arr);
-	//line(arr[0][0].x, arr[10][18].x, arr[0][0].y, arr[10][18].y, fdf.mlx);
-
-	/* int i = 0, j = 0;
-	while (i < fdf.size_h)
-	{
-		j = 0;
-		while (j < fdf.size_w)
-		{
-			printf("I: %d, J: %d, X: %d, Y: %d, Z: %d\n", i, j, arr[i][j].x, arr[i][j].y, arr[i][j].z);
-			j++;
-		}
-		i++;
-	} */
-	int i, j; //
+	int		i;
+	int 	j;
 
 	i = 0;
+	j = 0;
+    if (!(map = split_nbrs(file_to_line(av[1]), &fdf)))
+    	return (-1);
+	fdf.mlx = mlx_init();
+	fdf.win = mlx_new_window(fdf.mlx, WIDTH, HEIGHT, "FdF");
 	while (i < fdf.size_h)
 	{
 		j = 0;
 		while (j < fdf.size_w)
 		{
-			//printf("#map# i: %d, j: %d\n", i, j);
 			iso(&map[i][j]);
 			j++;
 		}
 		i++;
-	} //
+	}
 	ft_fill(fdf, map);
-	mlx_hook(fdf.win, 2, 0, close_mlx, NULL);
+	mlx_hook(fdf.win, 2, 0, binds_mlx, NULL);
 	mlx_loop(fdf.mlx);
 	return (0);
 }

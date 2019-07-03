@@ -14,25 +14,30 @@
 
 char	*file_to_line(char *name)
 {
-
-	// OLD
-	/*
-	char	*res;
-	char	buf[BUFF_SIZE];
 	int		fd;
+	char	*file;
+	char	*tmp;
+	int		i;
+	char	buf[BUFF_SIZE + 1];
 
+	i = 0;
 	if ((fd = open(name, O_RDONLY)) == -1)
 		return (NULL);
-	else
-		res = ft_strnew(1);
-	while (read(fd, buf, BUFF_SIZE) > 0)
+	file = ft_strnew(1);
+	while ((i = read(fd, buf, BUFF_SIZE)))
 	{
-		res = ft_strjoin(res, buf);
-		ft_bzero(buf, BUFF_SIZE);
+		if (i < 0)
+		{
+			ft_memdel((void **)&file);
+			return (NULL);
+		}
+		buf[i] = '\0';
+		tmp = ft_strjoin(file, buf);
+		ft_memdel((void **)&file);
+		file = tmp;
 	}
 	close(fd);
-	return (res); */
-
+	return (file);
 }
 
 static int	count_nbrs(char const *s)
@@ -44,8 +49,6 @@ static int	count_nbrs(char const *s)
 	nb = 0;
 	if (!s || !*s)
 		return (0);
-	/*if (ft_isdigit(s[0]))
-		nb = 1;*/
 	while (s[i] != '\0' && s[i] != '\n')
 	{
 		if (ft_isdigit(s[i]) && !ft_isdigit(s[i + 1]) && s[i + 1] != '\0')
@@ -57,58 +60,49 @@ static int	count_nbrs(char const *s)
 
 static int	count_lns(char const *s)
 {
-	int	i;
 	int	nb;
+	int flag;
 
-	i = 0;
+	flag = 0;
 	nb = 0;
 	if (!s || !*s)
 		return (0);
 	/*if (ft_isdigit(s[0]))
 		nb = 1;*/
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if ((s[i] == '\n' && s[i + 1] != '\n'))
+		if ((*s == '\n' && *(s + 1) != '\n'))
+		{
 			nb++;
-		i++;
+			flag = 1;
+		}
+		else
+		{
+			flag = 0;
+		}
+		s++;
 	}
+	if (!flag)
+		nb++;
 	return (nb);
 }
 
-static t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
+void		init_arr(t_pt ***arr, int size_w, int size_h)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
-	while (j <= size_w && *s != '\0')
+	while (i < size_h)
 	{
-		while (*s == ' ')
-			s++;
-		if (*s == '\n' && (*(s + 1) == '\0' || *(s + 1) == '\n'))
-			break ;
-		if (*s == '\n')
+		while (j < size_w)
 		{
-			i++;
-			if (i > size_h)
-				break ;
-			j = 0;
-			/*if (count_nbrs(++s) != size_w || i > size_h)
-				return (NULL);*/
-			++s;
+			(*arr)[i][j].print = 0;
+			j++;
 		}
-		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
-			s++;
-		arr[i][j].z = ft_atoi(s) * 1; // height;
-		arr[i][j].color = 0xFFFFFF;
-		arr[i][j].x = (j - size_w / 2) * 5; // x axis
-		arr[i][j].y = (i - size_h / 2) * 5; // y axis
-		while (ft_isdigit(*s) || *s == '-')
-			s++;
-		j++;
+		i++;
 	}
-	return (arr);
 }
 
 t_pt		**split_nbrs(char const *s, t_mlx *fdf)
@@ -129,5 +123,6 @@ t_pt		**split_nbrs(char const *s, t_mlx *fdf)
 	}
 	if (!arr)
 		return (NULL);
+	init_arr(&arr, fdf->size_w, fdf->size_h);
 	return (fill_arr(s, arr, fdf->size_w, fdf->size_h));
 }
