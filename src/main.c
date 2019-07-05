@@ -60,7 +60,7 @@ int 		cross_close(void *param)
 
 int		to_exit(void)
 {
-	printf("err: %d\n", errno);
+	//printf("err: %d\n", errno);
 	if (errno == 2)
 		ft_putstr("Usage: ./fdf <filename.fdf> [height scale -flat]\n");
 	else if (errno == 1 || errno == 3 || errno == 13)
@@ -90,7 +90,7 @@ int main(int ac, char **av)
 	}
 	else
 		to_exit();
-	if (!ft_strstr(av[2], ".fdf"))
+	if (!ft_strstr(av[1], ".fdf"))
 		to_exit();
     if (!(fdf.map = split_nbrs(file_to_line(av[1]), &fdf)))
 		to_exit();
