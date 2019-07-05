@@ -95,6 +95,9 @@
 		<Unit filename="/Users/ibohun/CLionProjects/42-fdf/src/read.c">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/ibohun/CLionProjects/42-fdf/src/view.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/ibohun/CLionProjects/42-fdf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

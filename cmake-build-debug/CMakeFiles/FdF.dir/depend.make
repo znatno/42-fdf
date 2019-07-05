@@ -16,3 +16,8 @@ CMakeFiles/FdF.dir/src/read.c.o: ../minilibx_macos/mlx.h
 CMakeFiles/FdF.dir/src/read.c.o: ../include/fdf.h
 CMakeFiles/FdF.dir/src/read.c.o: ../src/read.c
 
+CMakeFiles/FdF.dir/src/view.c.o: ../libft/libft.h
+CMakeFiles/FdF.dir/src/view.c.o: ../minilibx_macos/mlx.h
+CMakeFiles/FdF.dir/src/view.c.o: ../include/fdf.h
+CMakeFiles/FdF.dir/src/view.c.o: ../src/view.c
+

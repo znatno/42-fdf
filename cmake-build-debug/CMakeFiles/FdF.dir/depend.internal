@@ -16,3 +16,8 @@ CMakeFiles/FdF.dir/src/read.c.o
  ../minilibx_macos/mlx.h
  /Users/ibohun/CLionProjects/42-fdf/include/fdf.h
  /Users/ibohun/CLionProjects/42-fdf/src/read.c
+CMakeFiles/FdF.dir/src/view.c.o
+ ../libft/libft.h
+ ../minilibx_macos/mlx.h
+ /Users/ibohun/CLionProjects/42-fdf/include/fdf.h
+ /Users/ibohun/CLionProjects/42-fdf/src/view.c

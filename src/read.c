@@ -67,8 +67,6 @@ static int	count_lns(char const *s)
 	nb = 0;
 	if (!s || !*s)
 		return (0);
-	/*if (ft_isdigit(s[0]))
-		nb = 1;*/
 	while (*s != '\0')
 	{
 		if ((*s == '\n' && *(s + 1) != '\n'))
@@ -124,5 +122,5 @@ t_pt		**split_nbrs(char const *s, t_mlx *fdf)
 	if (!arr)
 		return (NULL);
 	init_arr(&arr, fdf->size_w, fdf->size_h);
-	return (fill_arr(s, arr, fdf->size_w, fdf->size_h));
+	return (fill_arr(s, arr, fdf->size_w, fdf->size_h, *fdf));
 }

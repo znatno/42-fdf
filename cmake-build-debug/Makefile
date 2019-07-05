@@ -204,6 +204,33 @@ src/read.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/read.c.s
 .PHONY : src/read.c.s
 
+src/view.o: src/view.c.o
+
+.PHONY : src/view.o
+
+# target to build an object file
+src/view.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/view.c.o
+.PHONY : src/view.c.o
+
+src/view.i: src/view.c.i
+
+.PHONY : src/view.i
+
+# target to preprocess a source file
+src/view.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/view.c.i
+.PHONY : src/view.c.i
+
+src/view.s: src/view.c.s
+
+.PHONY : src/view.s
+
+# target to generate assembly for a file
+src/view.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/view.c.s
+.PHONY : src/view.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... src/read.o"
 	@echo "... src/read.i"
 	@echo "... src/read.s"
+	@echo "... src/view.o"
+	@echo "... src/view.i"
+	@echo "... src/view.s"
 .PHONY : help
 
 

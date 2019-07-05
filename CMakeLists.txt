@@ -13,7 +13,8 @@ link_directories(minilibx_macos)
 set(SOURCE
         src/main.c
         src/read.c
-        src/fill.c)
+        src/fill.c
+        src/view.c)
 
 add_executable(FdF ${SOURCE})
 

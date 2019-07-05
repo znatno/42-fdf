@@ -1,12 +1,28 @@
 #include "../include/fdf.h"
 
-t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
+void		free_map(t_mlx *fdf)
+{
+	int i;
+
+	i = 0;
+	if (fdf->map)
+	{
+		while (i < fdf->size_h)
+		{
+			free(fdf->map[i]);
+			i++;
+		}
+	}
+}
+
+t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h, t_mlx fdf)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
+
 	while (j <= size_w && *s != '\0')
 	{
 		while (*s == ' ')
@@ -23,9 +39,9 @@ t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 		}
 		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
 			s++;
-		arr[i][j].z = ft_atoi(s) * 1; // height;
-		arr[i][j].x = (j - (size_w / 8)) * 2; // x axis
-		arr[i][j].y = (i - (size_h / 2)) * 2; // y axis
+		arr[i][j].z = (int)(ft_atoi(s) * fdf.height); // height;
+		arr[i][j].x = (j - (size_w / 2)) * fdf.scale; // x axis
+		arr[i][j].y = (i - (size_h / 2)) * fdf.scale; // y axis
 		arr[i][j].print = 1;
 		while (ft_isdigit(*s) || *s == '-')
 			s++;
@@ -36,3 +52,4 @@ t_pt	**fill_arr(char const *s, t_pt **arr, int size_w, int size_h)
 	}
 	return (arr);
 }
+
