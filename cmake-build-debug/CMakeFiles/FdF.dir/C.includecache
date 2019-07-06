@@ -29,10 +29,8 @@ math.h
 -
 errno.h
 -
-stdio.h
--
 
-/Users/ibohun/CLionProjects/42-fdf/src/main.c
+/Users/ibohun/CLionProjects/42-fdf/src/fill.c
 ../include/fdf.h
 /Users/ibohun/CLionProjects/42-fdf/include/fdf.h
 

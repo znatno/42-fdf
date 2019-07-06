@@ -113,6 +113,9 @@ t_pt		**split_nbrs(char const *s, t_mlx *fdf)
 		return (NULL);
 	fdf->size_w = count_nbrs(s);
 	fdf->size_h = count_lns(s);
+	fdf->flag_sizes = 1;
+	if (fdf->size_w <= 1 || fdf->size_h <= 1)
+		to_exit(fdf);
 	arr = (t_pt**)malloc(sizeof(t_pt*) * fdf->size_h);
 	while (i < fdf->size_h)
 	{
@@ -122,5 +125,5 @@ t_pt		**split_nbrs(char const *s, t_mlx *fdf)
 	if (!arr)
 		return (NULL);
 	init_arr(&arr, fdf->size_w, fdf->size_h);
-	return (fill_arr(s, arr, fdf->size_w, fdf->size_h, *fdf));
+	return (fill_arr(s, arr, *fdf));
 }
