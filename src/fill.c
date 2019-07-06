@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-void		free_map(t_mlx *fdf)
+void	free_map(t_mlx *fdf)
 {
 	int i;
 
@@ -27,46 +27,44 @@ void		free_map(t_mlx *fdf)
 	}
 }
 
-void	fill_pt(t_pt *arr, t_mlx fdf, int h, int i, int j)
+void	fill_pt(t_pt *arr, t_mlx fdf, int h)
 {
 	(*arr).z = (int)(h * fdf.height);
-	(*arr).x = (j - (fdf.size_w / 2)) * fdf.scale;
-	(*arr).y = (i - (fdf.size_h / 2)) * fdf.scale;
+	(*arr).x = (fdf.j - (fdf.size_w / 2)) * fdf.scale;
+	(*arr).y = (fdf.i - (fdf.size_h / 2)) * fdf.scale;
 	(*arr).print = 1;
+}
+
+void	*find_and_skip(const char **s)
+{
+	while (ft_isdigit(**s) || **s == '-')
+		(*s)++;
+	if (**s == ',')
+		while (**s != ' ' && **s != '\t' && **s != '\n' && **s != '\0')
+			(*s)++;
 }
 
 t_pt	**fill_arr(char const *s, t_pt **arr, t_mlx fdf)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (j <= fdf.size_w && *s != '\0')
+	fdf.i = 0;
+	fdf.j = 0;
+	while (fdf.j <= fdf.size_w && *s != '\0')
 	{
 		while (*s == ' ')
 			s++;
 		if (*s == '\n')
 		{
-			i++;
-			if (i > fdf.size_h || (*(s + 1) == '\0' || *(s + 1) == '\n'))
+			fdf.i++;
+			if (fdf.i > fdf.size_h || (*(s + 1) == '\0' || *(s + 1) == '\n'))
 				break ;
-			j = 0;
+			fdf.j = 0;
 			++s;
 		}
 		while (!ft_isdigit(*s) && *s != '-' && *s != '\n' && *s != '\0')
 			s++;
-//		arr[i][j].z = (int)(ft_atoi(s) * fdf.height);
-//		arr[i][j].x = (j - (fdf.size_w / 2)) * fdf.scale;
-//		arr[i][j].y = (i - (fdf.size_h / 2)) * fdf.scale;
-//		arr[i][j].print = 1;
-		fill_pt(&arr[i][j], fdf, ft_atoi(s), i, j);
-		while (ft_isdigit(*s) || *s == '-')
-			s++;
-		if (*s == ',')
-			while (*s != ' ' && *s != '\t' && *s != '\n' && *s != '\0')
-				s++;
-		j++;
+		fill_pt(&arr[fdf.i][fdf.j], fdf, ft_atoi(s));
+		find_and_skip(&s);
+		fdf.j++;
 	}
 	return (arr);
 }

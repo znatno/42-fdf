@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-static void iso(t_pt *p)
+static void	iso(t_pt *p)
 {
 	int previous_x;
 	int previous_y;
@@ -25,13 +25,13 @@ static void iso(t_pt *p)
 	p->y += HEIGHT / 2;
 }
 
-static void flat(t_pt *p)
+static void	flat(t_pt *p)
 {
 	p->x += WIDTH / 2;
 	p->y += HEIGHT / 2;
 }
 
-void	select_view(t_mlx *fdf, int ac, char **av)
+void		select_view(t_mlx *fdf, int ac, char **av)
 {
 	int i;
 	int j;
@@ -52,15 +52,20 @@ void	select_view(t_mlx *fdf, int ac, char **av)
 	}
 }
 
-void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
+void 		line(int x0, int x1, int y0, int y1, t_mlx *mlx)
 {
-	int dx = abs(x1 - x0);
-	int dy = abs(y1 - y0);
-	int sx = x1 >= x0 ? 1 : -1;
-	int sy = y1 >= y0 ? 1 : -1;
-	int color = 0xFFFFFF;
+	int dx;
+	int dy;
+	int sx;
+	int sy;
+	int color;
 
-	if (dy <= dx)
+	dx = abs(x1 - x0);
+	dy = abs(y1 - y0);
+	sx = x1 >= x0 ? 1 : -1;
+	sy = y1 >= y0 ? 1 : -1;
+	color = 0xFFFFFF;
+	if (dy <= dx) // horizontal
 	{
 		int d = (dy << 1) - dx;
 		int d1 = dy << 1;
@@ -78,7 +83,7 @@ void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
 			mlx_pixel_put(mlx->mlx, mlx->win, x, y, color);
 		}
 	}
-	else
+	else // vertical
 	{
 		int d = (dx << 1) - dy;
 		int d1 = dx << 1;
@@ -98,7 +103,7 @@ void line (int x0, int x1, int y0, int y1, t_mlx *mlx)
 	}
 }
 
-void	ft_fill(t_mlx fdf, t_pt **arr)
+void		ft_fill(t_mlx fdf, t_pt **arr)
 {
 	int i;
 	int j;
@@ -109,12 +114,14 @@ void	ft_fill(t_mlx fdf, t_pt **arr)
 		j = 0;
 		while (j < fdf.size_w)
 		{
-			if (i < fdf.size_h - 1 && ((arr[i][j].print == 1) && (arr[i + 1][j].print == 1)))
+			if (i < fdf.size_h - 1 && ((arr[i][j].print == 1)
+				&& (arr[i + 1][j].print == 1)))
 				line(arr[i][j].x, arr[i + 1][j].x,
-					 arr[i][j].y, arr[i + 1][j].y, fdf.mlx);
-			if (j < fdf.size_w - 1 && ((arr[i][j].print == 1) && (arr[i][j + 1].print == 1)))
+						arr[i][j].y, arr[i + 1][j].y, fdf.mlx);
+			if (j < fdf.size_w - 1 && ((arr[i][j].print == 1)
+				&& (arr[i][j + 1].print == 1)))
 				line(arr[i][j].x, arr[i][j + 1].x,
-					 arr[i][j].y, arr[i][j + 1].y, fdf.mlx);
+						arr[i][j].y, arr[i][j + 1].y, fdf.mlx);
 			j++;
 		}
 		i++;

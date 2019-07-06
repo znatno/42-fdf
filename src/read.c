@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-char	*file_to_line(char *name)
+char		*file_to_line(char *name)
 {
 	int		fd;
 	char	*file;
@@ -106,7 +106,7 @@ void		init_arr(t_pt ***arr, int size_w, int size_h)
 t_pt		**split_nbrs(char const *s, t_mlx *fdf)
 {
 	t_pt	**arr;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!s)

@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-int 		binds_mlx(int key, void *param)
+int		binds_mlx(int key, void *param)
 {
 	(void)param;
 	if (key == 53)
@@ -24,7 +24,7 @@ int 		binds_mlx(int key, void *param)
 	return (0);
 }
 
-int 		cross_close(void *param)
+int		cross_close(void *param)
 {
 	(void)param;
 	exit(0);
@@ -65,7 +65,7 @@ void	init_check(int ac, char **av, t_mlx *fdf)
 		to_exit(fdf);
 }
 
-int main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_mlx	fdf;
 
