@@ -30,7 +30,7 @@ math.h
 errno.h
 -
 
-/Users/ibohun/CLionProjects/42-fdf/src/fill.c
+/Users/ibohun/CLionProjects/42-fdf/src/view.c
 ../include/fdf.h
 /Users/ibohun/CLionProjects/42-fdf/include/fdf.h
 

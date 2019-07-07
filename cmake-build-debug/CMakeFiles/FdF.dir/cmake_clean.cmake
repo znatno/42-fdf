@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FdF.dir/src/read.c.o"
   "CMakeFiles/FdF.dir/src/fill.c.o"
   "CMakeFiles/FdF.dir/src/view.c.o"
+  "CMakeFiles/FdF.dir/src/draw.c.o"
   "FdF.pdb"
   "FdF"
 )

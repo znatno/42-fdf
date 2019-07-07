@@ -14,7 +14,8 @@ set(SOURCE
         src/main.c
         src/read.c
         src/fill.c
-        src/view.c)
+        src/view.c
+        src/draw.c)
 
 add_executable(FdF ${SOURCE})
 

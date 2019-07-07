@@ -36,7 +36,10 @@ int		to_exit(t_mlx *fdf)
 	if (((fdf->size_h <= 1) || (fdf->size_w <= 1)) && fdf->flag_sizes == 1)
 		ft_putstr("Error: invalid map\n");
 	else if (errno == 2)
-		ft_putstr("Usage: ./fdf <filename.fdf> [height] [scale] [-flat]\n");
+	{
+		ft_putstr("Usage: ./fdf <file.fdf>");
+		ft_putstr("[height] [scale] [RGB int] [-flat]\n");
+	}
 	else if (errno == 1 || errno == 3 || errno == 13)
 		ft_putstr("Error: invalid file\n");
 	if (errno == 3 || errno == 2)
@@ -46,7 +49,7 @@ int		to_exit(t_mlx *fdf)
 
 void	init_check(int ac, char **av, t_mlx *fdf)
 {
-	if (ac > 1 && ac < 6)
+	if (ac > 1 && ac < 7)
 	{
 		if (ac >= 3)
 			fdf->height = ft_atoi(av[2]);
@@ -56,6 +59,10 @@ void	init_check(int ac, char **av, t_mlx *fdf)
 			fdf->scale = ft_atoi(av[3]);
 		else
 			fdf->scale = 10;
+		if (ac >= 5)
+			fdf->color = ft_atoi(av[4]);
+		else
+			fdf->color = 0xFFFFFF;
 	}
 	else
 		to_exit(fdf);

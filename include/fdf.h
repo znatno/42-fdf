@@ -28,6 +28,18 @@ typedef struct	s_pt
 	int print;
 }				t_pt;
 
+typedef struct	s_draw
+{
+	int	dx;
+	int dy;
+	int sx;
+	int sy;
+	int d;
+	int d1;
+	int d2;
+
+}				t_draw;
+
 typedef struct	s_mlx
 {
 	void	*mlx;
@@ -38,8 +50,9 @@ typedef struct	s_mlx
 	t_pt	**map;
 	int		height;
 	int		scale;
-	int 	i;
-	int 	j;
+	int		color;
+	int		i;
+	int		j;
 }				t_mlx;
 
 char			*file_to_line(char *name);
@@ -49,4 +62,5 @@ void			select_view(t_mlx *fdf, int ac, char **av);
 void			ft_fill(t_mlx fdf, t_pt **arr);
 void			free_map(t_mlx *fdf);
 int				to_exit(t_mlx *fdf);
+void			line(t_pt p1, t_pt p2, t_mlx *mlx, int color);
 #endif

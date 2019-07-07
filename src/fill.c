@@ -68,3 +68,26 @@ t_pt	**fill_arr(char const *s, t_pt **arr, t_mlx fdf)
 	}
 	return (arr);
 }
+
+void	ft_fill(t_mlx fdf, t_pt **arr)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < fdf.size_h)
+	{
+		j = 0;
+		while (j < fdf.size_w)
+		{
+			if (i < fdf.size_h - 1 && ((arr[i][j].print == 1)
+				&& (arr[i + 1][j].print == 1)))
+				line(arr[i][j], arr[i + 1][j], fdf.mlx, fdf.color);
+			if (j < fdf.size_w - 1 && ((arr[i][j].print == 1)
+				&& (arr[i][j + 1].print == 1)))
+				line(arr[i][j], arr[i][j + 1], fdf.mlx, fdf.color);
+			j++;
+		}
+		i++;
+	}
+}
