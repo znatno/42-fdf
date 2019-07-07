@@ -12,25 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a2ff49-8e2b-4c8a-be9e-0db0eb257243" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/draw.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FdF.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/FdF.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FdF.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/fdf.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fdf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fill.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fill.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/line.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/view.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_maps/10-2.fdf" beforeDir="false" afterPath="$PROJECT_DIR$/test_maps/10-2.fdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,11 +93,20 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/test_maps/10-2.fdf">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="17">
-                      <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+                      <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/.gitignore">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="34">
+                      <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
                     </state>
                   </provider>
                 </entry>
@@ -159,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/view.c" />
         <option value="$PROJECT_DIR$/include/fdf.h" />
         <option value="$PROJECT_DIR$/test_maps/10-2.fdf" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -180,11 +172,6 @@
             <path>
               <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
               <item name="42-fdf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="42-fdf" type="462c0819:PsiDirectoryNode" />
-              <item name="test_maps" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -277,7 +264,7 @@
       <workItem from="1562427569848" duration="1978000" />
       <workItem from="1562430628535" duration="3309000" />
       <workItem from="1562438135420" duration="6634000" />
-      <workItem from="1562497137199" duration="5053000" />
+      <workItem from="1562497137199" duration="5287000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1554720683506</created>
@@ -391,11 +378,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562444970057</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="norm ✅&#10;makefile ⏳">
+      <created>1562502969195</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1562502969195</updated>
+    </task>
+    <task id="LOCAL-00018" summary="norm ✅&#10;makefile ⏳">
+      <created>1562503105452</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1562503105452</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107715000" />
+    <option name="totallyTimeSpent" value="107949000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,7 +505,8 @@
     <MESSAGE value="done, needs errors handling and more validation. also, needs norm &amp; makefile" />
     <MESSAGE value="needs norm &amp; make" />
     <MESSAGE value="needs norm drawing &amp; make" />
-    <option name="LAST_COMMIT_MESSAGE" value="needs norm drawing &amp; make" />
+    <MESSAGE value="norm ✅&#10;makefile ⏳" />
+    <option name="LAST_COMMIT_MESSAGE" value="norm ✅&#10;makefile ⏳" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -553,9 +555,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libft/ft_strmap.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strlen.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -791,7 +790,14 @@
     <entry file="file://$PROJECT_DIR$/test_maps/10-2.fdf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
